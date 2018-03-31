@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.github.brunobastosg.gerador-cpf-cnpj-intellij-idea</id>
+    <name>Gerador de CPF/CNPJ</name>
+    <vendor url="https://github.com/brunobastosg">Bruno Guimarães</vendor>
+
+    <description><![CDATA[
+    Gerador de CPF/CNPJ.
+    ]]></description>
+
+    <idea-version since-build="141.0"/>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="GeradorCPFCNPJ.GerarCPF" class="com.github.brunobastosg.action.GerarCPFAction" text="Gerar CPF" description="Gera um CPF aleatorio">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+        <action id="GeradorCPFCNPJ.GerarCNPJ" class="com.github.brunobastosg.action.GerarCNPJAction" text="Gerar CNPJ" description="Gera um CNPJ aleatorio">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+        <group id="GerarCPFCNPJGroup" text="Gerar CPF/CNPJ" description="Gerar CPF/CNPJ" popup="true">
+            <reference id="GeradorCPFCNPJ.GerarCPF" />
+            <reference id="GeradorCPFCNPJ.GerarCNPJ" />
+            <separator />
+            <action id="GeradorCPFCNPJ.AlternarMascara" class="com.github.brunobastosg.action.AlternarMascaraAction" text="Somente numeros" description="Gera somente os numeros">
+                <add-to-group group-id="EditorActions" anchor="first"/>
+            </action>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </group>
+    </actions>
+</idea-plugin>
