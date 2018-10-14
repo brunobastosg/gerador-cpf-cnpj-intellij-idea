@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.brunobastosg'
-version '1.0.0'
+version '1.0.1'
 
 apply plugin: 'java'
 
@@ -19,8 +19,11 @@ dependencies {
 
 intellij {
     version '2018.1'
+
 }
 patchPluginXml {
+    sinceBuild "181.4203"
+    untilBuild "182.*"
     changeNotes """
       Versão inicial"""
 }

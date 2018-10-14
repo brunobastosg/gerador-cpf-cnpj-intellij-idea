@@ -7,7 +7,7 @@
     Gerador de CPF/CNPJ.
     ]]></description>
 
-    <idea-version since-build="141.0"/>
+    <idea-version since-build="181.4203" until-build="182.*"/>
 
     <depends>com.intellij.modules.lang</depends>
 
