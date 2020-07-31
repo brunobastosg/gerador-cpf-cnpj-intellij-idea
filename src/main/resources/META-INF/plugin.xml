@@ -4,10 +4,10 @@
     <vendor url="https://github.com/brunobastosg">Bruno Guimarães</vendor>
 
     <description><![CDATA[
-    Gerador de CPF/CNPJ.
+    Gera CPFs e CNPJs válidos e insere diretamente no código
     ]]></description>
 
-    <idea-version since-build="181.4203" until-build="182.*"/>
+    <idea-version since-build="181.4203" until-build="202.*"/>
 
     <depends>com.intellij.modules.lang</depends>
 

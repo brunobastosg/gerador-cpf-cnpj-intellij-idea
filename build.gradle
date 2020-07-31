@@ -1,9 +1,9 @@
 plugins {
-    id 'org.jetbrains.intellij' version '0.3.1'
+    id 'org.jetbrains.intellij' version '0.4.21'
 }
 
 group 'com.github.brunobastosg'
-version '1.0.2'
+version '1.0.3'
 
 apply plugin: 'java'
 
@@ -18,12 +18,12 @@ dependencies {
 }
 
 intellij {
-    version '2018.1'
+    version '2020.2'
 
 }
 patchPluginXml {
     sinceBuild "181.4203"
-    untilBuild "193.*"
+    untilBuild "202.*"
     changeNotes """
-      Versão inicial"""
+      Atualização do range de versões suportadas"""
 }
