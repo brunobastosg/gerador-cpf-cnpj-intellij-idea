@@ -4,7 +4,7 @@
     <vendor url="https://github.com/brunobastosg">Bruno Guimarães</vendor>
 
     <description><![CDATA[
-    Gera CPFs e CNPJs válidos e insere diretamente no código
+    Brazilian CPF and CNPJ generator, useful for writing and running tests
     ]]></description>
 
     <idea-version since-build="181.4203" until-build="202.*"/>
