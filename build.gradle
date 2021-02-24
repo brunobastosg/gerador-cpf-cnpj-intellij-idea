@@ -25,5 +25,5 @@ patchPluginXml {
     sinceBuild "181.4203"
     untilBuild "203.*"
     changeNotes """
-      Atualização do range de versões suportadas"""
+      Increased supported version range"""
 }
