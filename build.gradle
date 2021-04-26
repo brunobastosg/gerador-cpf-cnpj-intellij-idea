@@ -1,9 +1,9 @@
 plugins {
-    id 'org.jetbrains.intellij' version '0.4.21'
+    id 'org.jetbrains.intellij' version '0.7.3'
 }
 
 group 'com.github.brunobastosg'
-version '1.0.5'
+version '1.0.6'
 
 apply plugin: 'java'
 
@@ -19,11 +19,11 @@ dependencies {
 
 intellij {
     version '2020.2'
-
 }
+
 patchPluginXml {
     sinceBuild "181.4203"
-    untilBuild "203.*"
+    untilBuild "211.*"
     changeNotes """
       Increased supported version range"""
 }
