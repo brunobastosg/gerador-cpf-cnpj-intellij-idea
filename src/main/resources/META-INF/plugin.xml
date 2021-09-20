@@ -7,7 +7,7 @@
     Brazilian CPF and CNPJ generator, useful for writing and running tests
     ]]></description>
 
-    <idea-version since-build="181.4203" until-build="211.*"/>
+    <idea-version since-build="181.4203" until-build="213.*"/>
 
     <depends>com.intellij.modules.lang</depends>
 
