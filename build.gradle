@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.brunobastosg'
-version '1.0.10'
+version '1.0.11'
 
 apply plugin: 'java'
 
@@ -23,7 +23,7 @@ intellij {
 
 patchPluginXml {
     sinceBuild "181.4203"
-    untilBuild "232.*"
+    untilBuild "233.*"
     changeNotes """
       Increased supported version range"""
 }
