@@ -7,9 +7,7 @@
     Brazilian CPF and CNPJ generator, useful for writing and running tests
     ]]></description>
 
-    <idea-version since-build="181.4203" until-build="233.*"/>
-
-    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
@@ -26,7 +24,7 @@
             <reference id="GeradorCPFCNPJ.GerarCPF" />
             <reference id="GeradorCPFCNPJ.GerarCNPJ" />
             <separator />
-            <action id="GeradorCPFCNPJ.AlternarMascara" class="com.github.brunobastosg.action.AlternarMascaraAction" text="Somente numeros" description="Gera somente os numeros">
+            <action id="GeradorCPFCNPJ.AlternarMascara" class="com.github.brunobastosg.action.AlternarMascaraAction" text="Somente números" description="Gera somente os números">
                 <add-to-group group-id="EditorActions" anchor="first"/>
             </action>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
