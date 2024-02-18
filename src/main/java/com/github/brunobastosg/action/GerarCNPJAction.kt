@@ -31,7 +31,7 @@ class GerarCNPJAction : GerarAction() {
         return gerarCNPJ()
     }
 
-    override fun formatarDado(cnpj: String): String {
-        return formatarCNPJ(cnpj)
+    override fun formatarDado(dado: String): String {
+        return formatarCNPJ(dado)
     }
 }

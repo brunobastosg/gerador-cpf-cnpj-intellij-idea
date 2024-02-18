@@ -31,7 +31,7 @@ class GerarCPFAction : GerarAction() {
         return gerarCPF()
     }
 
-    override fun formatarDado(cpf: String): String {
-        return formatarCPF(cpf)
+    override fun formatarDado(dado: String): String {
+        return formatarCPF(dado)
     }
 }
