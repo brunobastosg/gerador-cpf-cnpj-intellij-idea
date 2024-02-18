@@ -10,6 +10,7 @@ Este plugin possibilita a inserção de CPF's e/ou CNPJ's gerados aleatoriamente
 2. Selecione a opção **Generate...**;
 3. Escolha a opção desejada (**Gerar CPF** ou **Gerar CNPJ**);
 4. O CPF ou CNPJ será inserido na posição do cursor ou da seleção.
+   1. Se houver múltiplos cursores, será gerado um CPF ou CNPJ diferente para cada cursor.
 
 Alternativamente, você pode acessar o mesmo menu através do atalho **Alt**+**Insert**.
 
@@ -22,6 +23,7 @@ Enquanto estiver editando o código:
 3. Selecione a opção **Gerar CPF/CNPJ**;
 4. Escolha a opção desejada (**Gerar CPF** ou **Gerar CNPJ**);
 5. O CPF ou CNPJ será inserido na posição do cursor ou da seleção.
+   1. Se houver múltiplos cursores, será gerado um CPF ou CNPJ diferente para cada cursor.
 
 ## Habilitar/desabilitar máscara
 

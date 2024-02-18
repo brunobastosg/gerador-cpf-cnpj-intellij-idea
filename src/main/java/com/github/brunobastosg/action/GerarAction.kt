@@ -40,11 +40,11 @@ abstract class GerarAction : AnAction() {
         }
 
         val runnable = Runnable {
-            var dado = gerarDado()
-            if (!PropertiesComponent.getInstance().getBoolean(Constantes.GERAR_SOMENTE_NUMEROS)) {
-                dado = formatarDado(dado)
-            }
             for (caret in editor.caretModel.allCarets) {
+                var dado = gerarDado()
+                if (!PropertiesComponent.getInstance().getBoolean(Constantes.GERAR_SOMENTE_NUMEROS)) {
+                    dado = formatarDado(dado)
+                }
                 var start: Int
                 val document = caret.editor.document
                 if (caret.hasSelection()) {
