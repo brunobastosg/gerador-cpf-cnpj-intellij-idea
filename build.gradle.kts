@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.brunobastosg"
-version = "2.0.0"
+version = "2.0.1"
 
 repositories {
     mavenCentral()
@@ -29,9 +29,9 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
-        untilBuild.set("241.*")
+        untilBuild.set("242.*")
         changeNotes = """
-            If there are multiple cursors, a different CPF or CNPJ is generated per cursor."""
+            Increased supported version range"""
     }
 
     signPlugin {
