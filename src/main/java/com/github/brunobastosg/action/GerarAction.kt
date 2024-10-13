@@ -41,7 +41,7 @@ abstract class GerarAction : AnAction() {
 
         val runnable = Runnable {
             for (caret in editor.caretModel.allCarets) {
-                var dado = gerarDado()
+                var dado = gerarDado(PropertiesComponent.getInstance().getBoolean(Constantes.CNPJ_ALFANUMERICO))
                 if (!PropertiesComponent.getInstance().getBoolean(Constantes.GERAR_SOMENTE_NUMEROS)) {
                     dado = formatarDado(dado)
                 }
@@ -65,6 +65,6 @@ abstract class GerarAction : AnAction() {
         WriteCommandAction.runWriteCommandAction(project, runnable)
     }
 
-    protected abstract fun gerarDado(): String
+    protected abstract fun gerarDado(incluirLetras: Boolean): String
     protected abstract fun formatarDado(dado: String): String
 }

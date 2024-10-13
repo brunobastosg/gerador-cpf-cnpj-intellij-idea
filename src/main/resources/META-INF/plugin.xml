@@ -27,6 +27,9 @@
             <action id="GeradorCPFCNPJ.AlternarMascara" class="com.github.brunobastosg.action.AlternarMascaraAction" text="Somente números" description="Gera somente os números">
                 <add-to-group group-id="EditorActions" anchor="first"/>
             </action>
+            <action id="GeradorCPFCNPJ.AlternarFormatoCnpj" class="com.github.brunobastosg.action.AlternarFormatoCnpjAction" text="CNPJ alfanumérico" description="Gera CNPJ's no novo formato alfanumérico">
+                <add-to-group group-id="EditorActions" anchor="first"/>
+            </action>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </group>
     </actions>

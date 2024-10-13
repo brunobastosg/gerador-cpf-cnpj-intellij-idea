@@ -27,7 +27,7 @@ import com.github.brunobastosg.formatador.Formatador.formatarCPF
 import com.github.brunobastosg.gerador.Gerador.gerarCPF
 
 class GerarCPFAction : GerarAction() {
-    override fun gerarDado(): String {
+    override fun gerarDado(incluirLetras: Boolean): String {
         return gerarCPF()
     }
 

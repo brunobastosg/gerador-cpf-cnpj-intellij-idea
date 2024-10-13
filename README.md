@@ -40,3 +40,19 @@ Por padrão, este plugin gera os valores de CPF e CNPJ com máscara. Caso queira
 1. Selecione o menu **Help** e depois a opção **Find Action...** (ou utilize o atalho **Ctrl**+**Shift**+**A**);
 2. Navegue com as setas do teclado ou digite o texto **Somente números** para buscar a ação;
 3. Aperte **ENTER** ou clique com o mouse para habilitá-la.
+
+## Habilitar/desabilitar CNPJ alfanumérico
+
+Por padrão, este plugin gera o CNPJ numérico. Caso queira testar o novo formato de CNPJ alfanumérico, com previsão de implantação em janeiro de 2026, há duas formas:
+
+### 1. Através do menu de contexto
+
+1. Clique com o botão direito;
+2. Selecione a opção **Gerar CPF/CNPJ**;
+3. Habilite a opção **CNPJ alfanumérico**.
+
+### 2. Através da opção **_Find Action_**
+
+1. Selecione o menu **Help** e depois a opção **Find Action...** (ou utilize o atalho **Ctrl**+**Shift**+**A**);
+2. Navegue com as setas do teclado ou digite o texto **CNPJ alfanumérico** para buscar a ação;
+3. Aperte **ENTER** ou clique com o mouse para habilitá-la.

@@ -24,33 +24,34 @@
 package com.github.brunobastosg.gerador
 
 import com.github.brunobastosg.util.Modulo11.calcularModulo11
-import java.security.SecureRandom
 
 object Gerador {
     private val MULTIPLICADORES_CPF = intArrayOf(2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
     private val MULTIPLICADORES_CNPJ = intArrayOf(2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 6)
 
-    private val RND = SecureRandom()
-
     fun gerarCPF(): String {
         return gerarCPFCNPJ(9, MULTIPLICADORES_CPF)
     }
 
-    fun gerarCNPJ(): String {
-        return gerarCPFCNPJ(12, MULTIPLICADORES_CNPJ)
+    fun gerarCNPJ(incluirLetras: Boolean): String {
+        return gerarCPFCNPJ(12, MULTIPLICADORES_CNPJ, incluirLetras)
     }
 
-    private fun gerarCPFCNPJ(tamanho: Int, multiplicadores: IntArray): String {
-        val base = gerarStringNumerica(tamanho)
+    private fun gerarCPFCNPJ(tamanho: Int, multiplicadores: IntArray, incluirLetras: Boolean = false): String {
+        val base = gerarStringNumericaOuAlfanumerica(tamanho, incluirLetras)
         val dv1 = calcularModulo11(base, multiplicadores)
         val dv2 = calcularModulo11(base + dv1, multiplicadores)
         return base + dv1 + dv2
     }
 
-    private fun gerarStringNumerica(tamanho: Int): String {
+    private fun gerarStringNumericaOuAlfanumerica(tamanho: Int, incluirLetras: Boolean): String {
         val sb = StringBuilder(tamanho)
+        val digitos = "0123456789"
+        val letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        val caracteresPermitidos = if (incluirLetras) digitos + letras else digitos
+
         for (i in 0 until tamanho) {
-            sb.append(RND.nextInt(10))
+            sb.append(caracteresPermitidos.random())
         }
         return sb.toString()
     }

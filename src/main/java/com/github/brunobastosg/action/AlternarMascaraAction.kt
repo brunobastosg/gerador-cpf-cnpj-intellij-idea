@@ -25,6 +25,7 @@ package com.github.brunobastosg.action
 
 import com.github.brunobastosg.constants.Constantes
 import com.intellij.ide.util.PropertiesComponent
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.ToggleAction
 
@@ -35,5 +36,9 @@ class AlternarMascaraAction : ToggleAction() {
 
     override fun setSelected(anActionEvent: AnActionEvent, b: Boolean) {
         PropertiesComponent.getInstance().setValue(Constantes.GERAR_SOMENTE_NUMEROS, b)
+    }
+
+    override fun getActionUpdateThread(): ActionUpdateThread {
+        return ActionUpdateThread.BGT
     }
 }

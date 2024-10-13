@@ -23,15 +23,22 @@
  */
 package com.github.brunobastosg.action
 
-import com.github.brunobastosg.formatador.Formatador.formatarCNPJ
-import com.github.brunobastosg.gerador.Gerador.gerarCNPJ
+import com.github.brunobastosg.constants.Constantes
+import com.intellij.ide.util.PropertiesComponent
+import com.intellij.openapi.actionSystem.ActionUpdateThread
+import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.ToggleAction
 
-class GerarCNPJAction : GerarAction() {
-    override fun gerarDado(incluirLetras: Boolean): String {
-        return gerarCNPJ(incluirLetras)
+class AlternarFormatoCnpjAction : ToggleAction() {
+    override fun isSelected(anActionEvent: AnActionEvent): Boolean {
+        return PropertiesComponent.getInstance().getBoolean(Constantes.CNPJ_ALFANUMERICO, false)
     }
 
-    override fun formatarDado(dado: String): String {
-        return formatarCNPJ(dado)
+    override fun setSelected(anActionEvent: AnActionEvent, b: Boolean) {
+        PropertiesComponent.getInstance().setValue(Constantes.CNPJ_ALFANUMERICO, b)
+    }
+
+    override fun getActionUpdateThread(): ActionUpdateThread {
+        return ActionUpdateThread.BGT
     }
 }

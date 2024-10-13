@@ -30,7 +30,7 @@ object Modulo11 {
         var i = base.length - 1
         var j = 0
         while (i >= 0) {
-            soma += multiplicadores[j] * base[i].toString().toInt()
+            soma += multiplicadores[j] * (base[i].code - 48)
             i--
             j++
         }
