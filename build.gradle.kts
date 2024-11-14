@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.brunobastosg"
-version = "2.1.0"
+version = "2.1.1"
 
 repositories {
     mavenCentral()
@@ -29,9 +29,9 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
-        untilBuild.set("242.*")
+        untilBuild.set("243.*")
         changeNotes = """
-            Added support for alphanumeric CNPJ"""
+            Increased supported version range"""
     }
 
     signPlugin {
