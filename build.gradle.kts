@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.brunobastosg"
-version = "2.1.1"
+version = "2.1.2"
 
 repositories {
     mavenCentral()
@@ -29,7 +29,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
-        untilBuild.set("243.*")
+        untilBuild.set("251.*")
         changeNotes = """
             Increased supported version range"""
     }
