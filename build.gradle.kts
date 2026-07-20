@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.brunobastosg"
-version = "2.1.5"
+version = "2.1.6"
 
 repositories {
     mavenCentral()
@@ -29,9 +29,9 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
-        untilBuild.set("261.*")
+        untilBuild.set(provider { null })
         changeNotes = """
-            Increased supported version range"""
+            Setting unlimited untilBuild"""
     }
 
     signPlugin {
