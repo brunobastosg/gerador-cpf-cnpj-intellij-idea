@@ -1,16 +1,18 @@
 <idea-plugin>
     <id>com.github.brunobastosg.gerador-cpf-cnpj-intellij-idea</id>
-    <name>Gerador de CPF/CNPJ</name>
+    <name>Gerador De CPF/CNPJ</name>
     <vendor url="https://github.com/brunobastosg">Bruno Guimarães</vendor>
 
     <description><![CDATA[
-    Brazilian CPF and CNPJ generator, useful for writing and running tests
+    Brazilian CPF and CNPJ generator, useful for writing and running tests.
+    Also exposes generation and check-digit validation tools through the native JetBrains MCP server.
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.mcpServer</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <mcpServer.mcpToolset implementation="com.github.brunobastosg.mcp.CpfCnpjMcpToolset"/>
     </extensions>
 
     <actions>
@@ -21,13 +23,13 @@
             <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
         <group id="GerarCPFCNPJGroup" text="Gerar CPF/CNPJ" description="Gerar CPF/CNPJ" popup="true">
-            <reference id="GeradorCPFCNPJ.GerarCPF" />
-            <reference id="GeradorCPFCNPJ.GerarCNPJ" />
+            <reference ref="GeradorCPFCNPJ.GerarCPF" />
+            <reference ref="GeradorCPFCNPJ.GerarCNPJ" />
             <separator />
-            <action id="GeradorCPFCNPJ.AlternarMascara" class="com.github.brunobastosg.action.AlternarMascaraAction" text="Somente números" description="Gera somente os números">
+            <action id="GeradorCPFCNPJ.AlternarMascara" class="com.github.brunobastosg.action.AlternarMascaraAction" text="Somente Números" description="Gera somente os números">
                 <add-to-group group-id="EditorActions" anchor="first"/>
             </action>
-            <action id="GeradorCPFCNPJ.AlternarFormatoCnpj" class="com.github.brunobastosg.action.AlternarFormatoCnpjAction" text="CNPJ alfanumérico" description="Gera CNPJ's no novo formato alfanumérico">
+            <action id="GeradorCPFCNPJ.AlternarFormatoCnpj" class="com.github.brunobastosg.action.AlternarFormatoCnpjAction" text="CNPJ Alfanumérico" description="Gera CNPJ's no novo formato alfanumérico">
                 <add-to-group group-id="EditorActions" anchor="first"/>
             </action>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>

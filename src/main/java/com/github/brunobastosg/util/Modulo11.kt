@@ -24,6 +24,18 @@
 package com.github.brunobastosg.util
 
 object Modulo11 {
+    private val MULTIPLICADORES_CPF = intArrayOf(2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+    private val MULTIPLICADORES_CNPJ = intArrayOf(2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 6)
+
+    fun calcularDigitosCPF(base: String): String = calcularDigitos(base, MULTIPLICADORES_CPF)
+
+    fun calcularDigitosCNPJ(base: String): String = calcularDigitos(base, MULTIPLICADORES_CNPJ)
+
+    private fun calcularDigitos(base: String, multiplicadores: IntArray): String {
+        val primeiro = calcularModulo11(base, multiplicadores)
+        return primeiro + calcularModulo11(base + primeiro, multiplicadores)
+    }
+
     fun calcularModulo11(base: String, multiplicadores: IntArray): String {
         var soma = 0
 

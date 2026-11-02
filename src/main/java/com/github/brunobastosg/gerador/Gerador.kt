@@ -23,25 +23,25 @@
  */
 package com.github.brunobastosg.gerador
 
-import com.github.brunobastosg.util.Modulo11.calcularModulo11
+import com.github.brunobastosg.util.Modulo11.calcularDigitosCPF
+import com.github.brunobastosg.util.Modulo11.calcularDigitosCNPJ
 
 object Gerador {
-    private val MULTIPLICADORES_CPF = intArrayOf(2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-    private val MULTIPLICADORES_CNPJ = intArrayOf(2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 6)
-
     fun gerarCPF(): String {
-        return gerarCPFCNPJ(9, MULTIPLICADORES_CPF)
+        return gerarCPFCNPJ(9, false, ::calcularDigitosCPF)
     }
 
     fun gerarCNPJ(incluirLetras: Boolean): String {
-        return gerarCPFCNPJ(12, MULTIPLICADORES_CNPJ, incluirLetras)
+        return gerarCPFCNPJ(12, incluirLetras, ::calcularDigitosCNPJ)
     }
 
-    private fun gerarCPFCNPJ(tamanho: Int, multiplicadores: IntArray, incluirLetras: Boolean = false): String {
-        val base = gerarStringNumericaOuAlfanumerica(tamanho, incluirLetras)
-        val dv1 = calcularModulo11(base, multiplicadores)
-        val dv2 = calcularModulo11(base + dv1, multiplicadores)
-        return base + dv1 + dv2
+    private fun gerarCPFCNPJ(tamanho: Int, incluirLetras: Boolean, calcularDigitos: (String) -> String): String {
+        var documento: String
+        do {
+            val base = gerarStringNumericaOuAlfanumerica(tamanho, incluirLetras)
+            documento = base + calcularDigitos(base)
+        } while (documento.all { it == documento.first() })
+        return documento
     }
 
     private fun gerarStringNumericaOuAlfanumerica(tamanho: Int, incluirLetras: Boolean): String {
